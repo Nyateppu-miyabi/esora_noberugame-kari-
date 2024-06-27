@@ -6,7 +6,7 @@
 @wait time = 200
 
 *start 
-[playbgm storage="main_bgm.ogg" ]
+[playbgm storage="main_bgm.mp3" ]
 
 [button x=135 y=260 graphic="title/button_start.png" enterimg="title/button_start2.png"  target="gamestart"]
 [button x=135 y=410 graphic="title/button_load.png" enterimg="title/button_load2.png" role="load" ]
