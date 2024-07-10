@@ -34,6 +34,7 @@
 [chara_new name="kouhai" storage="chara/kouhai/kouhai.png" jname="後輩" ]
 [chara_new name="senpai" storage="chara/senpai/senpai.png" jname="先輩" ]
 
+[eval exp="f.first_like = 3" ]
 
 
 #えそら
@@ -79,6 +80,7 @@
 #えそら
 あらら...好感度ダウン...センスないですね～[p]
 そんなあなたでも、同級生ちゃんは無理やり校舎案内をしてくれるよ[p]
+[eval exp="f.first_like = f.first_like - 1"]
 @jump target="*common1"
 
 
@@ -145,6 +147,7 @@
 [font  size="20"   ]
 まぁどうせあとで強制的に入部させるけど...（ボソッ）[p]
 [resetfont]
+[eval exp="f.first_like = f.first_like - 1"]
 @jump target="*common2"
 
 *common2
@@ -205,6 +208,7 @@
 [font  size="20"   ]
 結局あとで入るけどね...（ボソッ）[p]
 [resetfont]
+[eval exp="f.first_like = f.first_like - 1"]
 @jump target="*common3"
 
 
@@ -212,22 +216,76 @@
 [chara_mod name="nanase" face="default"]
 #えそら
 綺麗で美しい先輩ちゃんとの出会いはこんなところですね[p]
+[chara_hide name="senpai" ]
 
+
+
+[if exp="f.first_like == 0" ]
+[fadeoutbgm time="1000" ]
+#えそら
+そして残念なお知らせです...[p]
+あなたは出会いのシーンの選択肢３つとも好感度ダウンの選択肢を[r]選んでしまいました...[p]
+この時点でBAD ENDです...[l][r]
+あなたはヒロイン達と恋愛することなく、高校生活を送ります...[p]
+[chara_mod  name="nanase" face="happy"]
+「ざんねん!!　あなたのぼうけんは　これで　おわってしまった!!」[p]
+[chara_hide name="nanase" ]
+[bg storage="brack_bg.png" time="1000"]
+#
+「めのまえがまっくらになった！」[p]
+[anim layer="message0" time="700" opacity="0" ]
+[wait time="1000" ]
+[playse storage="ちゃんちゃん♪1.mp3" ]
+[wait time="2500" ]
+[anim layer="message0" time="700" opacity="255" ]
+[wait time="100" ]
+[cm]
+#
+「あきらめては　ダメだ！　ケツイを　ちからに　かえるんだ！」[p]
+[anim layer="message0" time="700" opacity="0" ]
+[wait time="100" ]
+[playse storage="きらきら輝く4.mp3" ]
+[bg storage="zyutaku_yugata.jpg" time="1000" ]
+[chara_show name="nanase"]
+[anim layer="message0" time="700" opacity="255" ]
+[wait time="1000" ]
+[cm]
+[fadeinbgm storage="main_bgm.mp3" time="1000" ]
+[chara_mod  name="nanase" face="happy"]
+#えそら
+「おお！[r]　しんでしまうとは　なにごとだ！」[p]
+「しかたのない　やつだな。[r]　おまえに　もういちど[r]　きかいを　あたえよう！」[p]
+「ふたたび　このようなことが[r]　おこらぬことを[r]　わしは　いのっている！」[p]
+[delay speed="300" ]
+・・・[p]
+[delay speed="30" ]
+[chara_mod name="nanase" face="default"]
+一度言ってみたかったんですよね～ゲームの名言的なやつ[p]
+このゲームはあくまでシステムの説明がメインだから、[r]BAD ENDはないですよ[p]
+話が逸れちゃいましたが、[r]攻略対象の3人との出会いはそんな感じだよ！[p]
+
+
+
+
+[else]
+#えそら
 ちなみに、ここの出会いのシーンの選択肢３つの全部を好感度ダウンの方を選んだら...[p]
 #
 [font size=50 color="red" ]
 [delay speed=250]
-GAME OVER[p]
+BAD END[p]
 [delay speed=30]
 [resetfont]
 
 #えそら
 ってなるから気を付けてね！[p]
 攻略対象の3人との出会いはそんな感じだよ！[p]
-[chara_hide name="senpai" ]
+[endif]
+
+
+
 [anim layer="message0" time="700" opacity="0" ]
 [wait time="1000" ]
 [bg storage="bg.png" time="1000"]
-
 
 @jump storage="scene1.ks" target="*next_common" 
