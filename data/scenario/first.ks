@@ -15,6 +15,10 @@
 [ruby text="・" bold=true y=7 scale=0.65]
 [endmacro]
 
+[macro name=underLine]
+[ruby text="￣" scale=1 y=3 reverse=true]
+[endmacro]
+
 ;メッセージボックスは非表示
 @layopt layer="message" visible=false
 
