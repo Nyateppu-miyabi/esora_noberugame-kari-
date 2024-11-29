@@ -125,7 +125,7 @@
 [resetfont]
 
 #星
-今、部員私しかいなくて廃部しそうなんです...[r]先輩、[ruby text="ほし"]星に興味があったら入部しませんか？[p]
+今、部員私しかいなくて廃部しそうなんです...先輩、[ruby text="ほし"]星に[r]興味があったら入部しませんか？[p]
 
 [glink  color="blue" size="28"  x="360"  width="500"  y="300"  text="興味あるし、入るよ！"   target="*kouhai1" ]
 [glink  color="blue" size="28"  x="360"  width="500"  y="400"  text="別に星に興味ないんだよね..."  target="*kouhai2" ]
