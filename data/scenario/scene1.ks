@@ -43,11 +43,16 @@
 えそらちゃんこと、慧空ナナセと申します！[p]
 #えそらちゃん
 これは今計画している「恋愛ノベルゲーム」のシステム例だよ！[p]
-これからどんなシステムを考えているか、試しにやっていくよ～！[p]
+これからどんなゲームを考えているか、試しにやっていくよ～！[p]
+大まかに3つのパートに分けて説明していくよ！[p]
+「どんなノベルゲームなのか（ヒロインとの出会い）」[r]「ゲームシステムについて」「キャラの詳細について」の3つだよ！[p]
+初めての人はぜひ最初から全部プレイしてみてね！[p]
 準備はいい？[p]
 
-[glink  color="blue"  storage="scene1.ks"  size="28"  x="360"  width="500"  y="300"  text="いいよ！"  target="*select1"  ]
-[glink  color="blue"  storage="scene1.ks"  size="28"  x="360"  width="500"  y="400"  text="ちょっと待って！"  target="*select2"  ]
+[glink  color="blue" size="28"  x="360"  width="500"  y="100"  text="いいよ！"  target="*select1"  ]
+[glink  color="blue" size="28"  x="360"  width="500"  y="200"  text="ちょっと待って！"  target="*select2"  ]
+[glink  color="blue" size="28"  x="360"  width="500"  y="300"  text="ゲームシステムまで飛ばして！"  target="*select3"  ]
+[glink  color="blue" size="28"  x="360"  width="500"  y="400"  text="キャラの詳細まで飛ばして！"  target="*select4"  ]
 [s  ]
 
 *select1
@@ -61,6 +66,17 @@
 #えそらちゃん
 それじゃあいくよ！（強制）[p]
 @jump target="*common"
+
+*select3
+#えそらちゃん
+分かりました！じゃあゲームシステムまで飛ばしますね！[p]
+@jump target="*next_common" 
+
+*select4
+#えそらちゃん
+分かりました！じゃあキャラの詳細まで飛ばしますね！[p]
+@jump target="*select_part1" 
+
 
 *common
 #えそらちゃん
@@ -101,21 +117,62 @@
 @jump storage="event_sean.ks" target="*event_sean"  
 
 
-*end_talk
+*select_part1
 [bg storage="bg.png" time="1000"]
 [anim layer="message0" time="700" opacity="225" ]
 [wait time="1000" ]
 [cm]
+#えそらちゃん
+じゃあこれからは各ヒロインの詳細について説明してくよ！[p]
+各パートとーっても長いから、ここからは任意で見ていってね[p]
+「もうバッチリ！」って人は一番下の「終わる」を選んでね！[p]
+
+@jump target="*select_part2" 
+
+
+*select_part2
+#えそらちゃん
+どの子の事が知りたいですか？[p]
+[glink  color="blue" size="28"  x="360"  width="500"  y="100"  text="桃瀬　花菜"   target="*doukyusei" ]
+[glink  color="blue" size="28"  x="360"  width="500"  y="200"  text="黒咲　星"   target="*kouhai" ]
+[glink  color="blue" size="28"  x="360"  width="500"  y="300"  text="和泉　セレナ"  target="*senpai" ]
+[glink  color="blue" size="28"  x="360"  width="500"  y="400"  text="終わる"  target="*finish" ]
+[s]
+
+*doukyusei
+#えそらちゃん
+花菜ちゃんですね！それじゃあ会いに行きましょう！[p]
+@jump storage="doukyusei_inf.ks" target="*doukyusei_inf"
+
+*kouhai
+#えそらちゃん
+星ちゃんですね！それじゃあ会いに行きましょう！[p]
+@jump storage="kouhai_inf.ks" target="*kouhai_inf"
+
+*senpai
+#えそらちゃん
+セレナちゃんですね！それじゃあ会いに行きましょう！[p]
+@jump storage="senpai_inf.ks" target="*senpai_inf"
+
+*finish
+#えそらちゃん
+分かりました！それじゃあエンディングに行きましょう！[p]
+@jump target="*end_talk" 
+
+
+*end_talk
 #えそらちゃん
 いかがでしたか？[p]
 現時点で決まっているゲームシステムはこんなところです！[p]
 まだまだ決まってないことも多いし、今回体験してもらった流れから[r]ガラッと変わるかもしれません[p]
 でも、絶対にいいゲームになると思うので、ぜひみんなの力を合わせて[r]作り上げましょう！
 [font  size="15"]それにこれ作ってる人がもっとシステム覚えたらもっと色々なことも...！[resetfont][p]
+また、このデモ版の文章は一人のリスナーが書いているので、[font color="red"]間違い[resetfont]があるかもしれません...[p]
+もし「ここ配信と違うよ！」や「こんなこと配信で言ってない！」等があれば、X（旧Twitter）の「＠Nyateppu718」までDMを下さい！[p]
 というわけで！[l][r]
 今回のゲームはここまでにしたいと思います！[p]
 プレイして下さってありがとうございました！[l][r]
-また次回の改良版でお会いしましょう！[p]
+また次回のデモ版でお会いしましょう！[p]
 [chara_mod  name="nanase" face="happy"]
 [font size="40"]
 おつナナでした～！[p]
