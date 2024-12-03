@@ -495,11 +495,13 @@
 全然ダメです！バッドエンドです！[l][r]
 好感度0！逆にすごいです...[p]
 [endif]
+[chara_mod  name="nanase" face="happy"]
+これでシステムはバッチリですね！[p]
 [chara_mod name="nanase" face="default"]
 [anim layer="message0" time="700" opacity="0" ]
 [wait time="1000" ]
 
-@jump storage="scene1.ks" target="*end_talk"  
+@jump storage="scene1.ks" target="*select_part1"  
 
 
 *last2
@@ -509,8 +511,9 @@
 おめでとうございます！好感度最高です！[l][r]
 ぼくのこと分かってますね～！嬉しいですね～！[p]
 こういう隠しエンドも作れたら楽しそうですよね！[p]
+これでシステムはバッチリですね！[p]
 [chara_mod name="nanase" face="default"]
 [anim layer="message0" time="700" opacity="0" ]
 [wait time="1000" ]
 
-@jump storage="scene1.ks" target="*end_talk"
+@jump storage="scene1.ks" target="*select_part1"
